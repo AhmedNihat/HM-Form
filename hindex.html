@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Booking - Customer Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #0d0d0d;
+      color: #39FF14;
+    }
+    @keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite; /* Speed: lower value = faster */
+  will-change: transform;
+  font-size: 1.5rem; /* Adjust size as needed */
+}
+
+
+
+    .neon-green {
+      color: #39FF14;
+    }
+    .bg-dark-panel {
+      background-color: #1a1a1a;
+    }
+    .input-dark {
+      background-color: #111;
+      color: #39FF14;
+      border: 1px solid #39FF14;
+      transition: all 0.2s ease-in-out;
+    }
+    .input-dark:focus {
+      outline: none;
+      border-color: #39FF14;
+      box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.3);
+    }
+    .border-neon {
+      border-color: #39FF14;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-2 sm:p-6">
+  <main class="w-full max-w-4xl bg-dark-panel p-4 sm:p-8 rounded-xl border border-neon shadow-2xl text-sm sm:text-base">
+
+    <!-- Logo & Title -->
+    <section class="text-center mb-6 sm:mb-8">
+      <img src="Hotel Manila Logo.png" alt="হোটেল লোগো" class="h-16 sm:h-24 mx-auto mb-2 sm:mb-3 object-contain">
+      <h1 class="text-2xl sm:text-4xl font-bold neon-green">হোটেল ম্যানিলা (আবাসিক)</h1>
+      <p class="text-xs sm:text-base mt-1 neon-green opacity-80">১১৩, স্টেশন রোড, চট্টগ্রাম</p>
+    </section>
+
+    <!-- Form Header -->
+    <h2 class="text-xl sm:text-2xl font-semibold neon-green text-center mb-5 sm:mb-6 border-b border-neon pb-2 sm:pb-3">
+      হোটেল বুকিং - গ্রাহকের তথ্য
+    </h2>
+
+    <!-- Form -->
+    <form id="customerForm" class="space-y-8 sm:space-y-10">
+
+      <!-- Names & Ages -->
+      <section>
+        <label class="block text-lg font-semibold mb-4 neon-green">নাম ও বয়স:</label>
+        <div class="space-y-4">
+          <!-- Row 1 -->
+          <div class="flex flex-wrap items-center gap-2 md:flex-row">
+            <span class="w-6 font-medium">১:</span>
+            <input type="text" name="person1_name" placeholder="নাম লিখুন"
+              class="min-w-[0] flex-[2] p-2 rounded input-dark" required>
+            <span class="text-sm">বয়স:</span>
+            <input type="number" name="person1_age"
+              class="min-w-[0] flex-[1] p-2 rounded input-dark" required>
+          </div>
+      
+          <!-- Row 2 -->
+          <div class="flex flex-wrap items-center gap-2 md:flex-row">
+            <span class="w-6 font-medium">২:</span>
+            <input type="text" name="person2_name" placeholder="নাম লিখুন"
+              class="min-w-[0] flex-[2] p-2 rounded input-dark">
+            <span class="text-sm">বয়স:</span>
+            <input type="number" name="person2_age"
+              class="min-w-[0] flex-[1] p-2 rounded input-dark">
+          </div>
+      
+          <!-- Row 3 -->
+          <div class="flex flex-wrap items-center gap-2 md:flex-row">
+            <span class="w-6 font-medium">৩:</span>
+            <input type="text" name="person3_name" placeholder="নাম লিখুন"
+              class="min-w-[0] flex-[2] p-2 rounded input-dark">
+            <span class="text-sm">বয়স:</span>
+            <input type="number" name="person3_age"
+              class="min-w-[0] flex-[1] p-2 rounded input-dark">
+          </div>
+        </div>
+      </section>
+      
+      
+
+
+      <!-- Address Section -->
+      <section>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 neon-green">ঠিকানা</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 neon-green">গ্রাম:</label>
+            <input type="text" name="gram" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">ডাকঘর:</label>
+            <input type="text" name="dakghor" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">থানা:</label>
+            <input type="text" name="thana" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">জেলা:</label>
+            <input type="text" name="jela" class="w-full p-2 rounded input-dark" required>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other Info -->
+      <section>
+        <h3 class="text-lg sm:text-xl font-semibold mb-3 neon-green">অন্যান্য তথ্য</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 neon-green">ফোন নম্বর:</label>
+            <input type="text" name="phone" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">এনআইডি/পাসপোর্ট নম্বর:</label>
+            <input type="text" name="nid_or_passport" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">পেশা:</label>
+            <input type="text" name="profession" class="w-full p-2 rounded input-dark" required>
+          </div>
+          <div>
+            <label class="block mb-1 neon-green">কোথায় থেকে আসবেন:</label>
+            <input type="text" name="from_location" class="w-full p-2 rounded input-dark">
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit -->
+<button type="submit" class="w-full py-3 bg-[#39FF14] text-black font-bold rounded-lg hover:bg-[#32e611] transition duration-300 shadow-md">
+    জমা দিন
+  </button>
+  
+  <!-- Animated Notice -->
+ <!-- Instant Moving Notice -->
+<div class="overflow-hidden whitespace-nowrap mt-6">
+    <div class="inline-block animate-marquee text-2xl font-bold neon-green">
+      <span>অনুগ্রহ করে রিসেপশনে প্রবেশের সময় আপনার জাতীয় পরিচয়পত্র প্রদর্শন করুন এবং নির্ধারিত পেমেন্ট সম্পন্ন করে রুমের চাবি সংগ্রহ করুন।</span>
+    </div>
+  </div>
+  
+
+      <!-- Result -->
+      <div id="result" class="mt-5 text-center neon-green text-base font-medium"></div>
+    </form>
+  </main>
+</body>
+</html>
